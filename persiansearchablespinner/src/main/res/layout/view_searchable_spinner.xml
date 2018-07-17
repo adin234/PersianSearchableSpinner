@@ -40,7 +40,7 @@
                     <FrameLayout
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:layout_gravity="end">
+                        android:layout_gravity="start">
 
                         <com.joanzapata.iconify.widget.IconTextView
                             android:id="@+id/start_search_icon_text_view"
@@ -99,7 +99,7 @@
                 <FrameLayout
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:layout_gravity="end">
+                    android:layout_gravity="start">
 
                     <com.joanzapata.iconify.widget.IconTextView
                         android:id="@+id/done_search_icon_text_view"
