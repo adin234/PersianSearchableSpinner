@@ -37,6 +37,17 @@
                     android:baselineAligned="false"
                     android:orientation="horizontal">
 
+                    <LinearLayout
+                        android:id="@+id/selected_item_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:background="#fff"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:orientation="vertical" />
+
                     <FrameLayout
                         android:layout_width="48dp"
                         android:layout_height="48dp"
@@ -64,17 +75,6 @@
                             android:tint="@android:color/darker_gray" />
 
                     </FrameLayout>
-
-                    <LinearLayout
-                        android:id="@+id/selected_item_layout"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center_vertical"
-                        android:layout_weight="1"
-                        android:background="#fff"
-                        android:gravity="center_vertical"
-                        android:maxLines="1"
-                        android:orientation="vertical" />
 
                 </LinearLayout>
             </RelativeLayout>
