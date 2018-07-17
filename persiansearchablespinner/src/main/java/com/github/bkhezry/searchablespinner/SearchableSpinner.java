@@ -80,6 +80,8 @@ public class SearchableSpinner extends RelativeLayout implements View.OnClickLis
   private OnItemSelectedListener mOnItemSelected;
   private SelectedView mCurrSelectedView;
 
+  private TextWatcher outsideTextWatcher;
+
   /* Attributes */
   private @ColorInt
   int mRevealViewBackgroundColor;
@@ -424,7 +426,12 @@ public class SearchableSpinner extends RelativeLayout implements View.OnClickLis
 
     @Override
     public void onTextChanged(CharSequence s, int start, int before, int count) {
+      if (outsideTextWatcher != null) {
+        outsideTextWatcher.onTextChanged(s, start, before, count);
+      }
+
       Filterable filterable = (Filterable) mSpinnerListView.getAdapter();
+
       if (filterable != null) {
         filterable.getFilter().filter(s);
       }
@@ -518,6 +525,14 @@ public class SearchableSpinner extends RelativeLayout implements View.OnClickLis
     if (mViewState == ViewState.ShowingEditLayout) {
       hideEditView();
     }
+  }
+
+  public TextWatcher getOutsideTextWatcher() {
+    return outsideTextWatcher;
+  }
+
+  public void setOutsideTextWatcher(TextWatcher outsideTextWatcher) {
+    this.outsideTextWatcher = outsideTextWatcher;
   }
 
   private void revealEditView() {
