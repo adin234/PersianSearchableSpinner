@@ -421,7 +421,9 @@ public class SearchableSpinner extends RelativeLayout implements View.OnClickLis
   private TextWatcher mTextWatcher = new TextWatcher() {
     @Override
     public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
+      if (outsideTextWatcher != null) {
+        outsideTextWatcher.beforeTextChanged(s, start, count, after);
+      }
     }
 
     @Override
@@ -439,7 +441,9 @@ public class SearchableSpinner extends RelativeLayout implements View.OnClickLis
 
     @Override
     public void afterTextChanged(Editable s) {
-
+      if (outsideTextWatcher != null) {
+        outsideTextWatcher.afterTextChanged(s);
+      }
     }
   };
 
